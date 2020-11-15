@@ -1,0 +1,78 @@
+@import "config";
+main {
+  display: grid;
+  place-items: center;
+}
+.overtitle {
+  font-size: 2rem;
+  color: $very-dark-blue;
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.title {
+  margin-top: 0;
+  font-size: 2rem;
+  color: $very-dark-blue;
+  font-weight: 600;
+}
+.subtitle {
+  font-weight: 400;
+  color: $grayish-blue;
+  max-width: 500px;
+  margin: 1em auto 2.5em auto;
+}
+.card-container {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2em 2em;
+  @include mobile {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+.card {
+  padding: 0 2em;
+  text-align: left;
+  border-radius: 5px;
+  border: 3px solid transparent;
+  box-shadow: 0px 4px 20px 5px $very-light-gray, 0px 4px 7px 0px $grayish-blue;
+  &__title {
+    padding: 0;
+    color: $very-dark-blue;
+    font-size: 1.2em;
+  }
+  &__description {
+    color: $grayish-blue;
+  }
+  .image {
+    width: 100%;
+    text-align: right;
+  }
+}
+.card-1 {
+  grid-row: 2 / span 2;
+  border-top-color: $cyan;
+}
+.card-2 {
+  grid-row: 1 / span 2;
+  border-top-color: $red;
+}
+.card-3 {
+  grid-row: 3 / span 2;
+  border-top-color: $orange;
+}
+.card-4 {
+  grid-row: 2 / span 2;
+  border-top-color: $blue;
+}
+.card-1,
+.card-2,
+.card-3,
+.card-4 {
+  @include mobile {
+    @include only-cell;
+  }
+}
